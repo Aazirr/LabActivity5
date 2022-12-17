@@ -14,25 +14,30 @@ public class SimpleCalcGUI extends JFrame {
 
     public SimpleCalcGUI(){
         btnCompute.addActionListener(b -> {
-            String operation = (String) cbOperations.getSelectedItem();
-            double num1 = Double.parseDouble(tfNumber1.getText());
-            double num2 = Double.parseDouble(tfNumber2.getText());
-            double result=0;
-            switch(operation){
-                case "+":
-                    result = num1 + num2;
-                    break;
-                case "-":
-                    result = num1 - num2;
-                    break;
-                case "*":
-                    result = num1 * num2;
-                    break;
-                case "/":
-                    result = num1 / num2;
-                    break;
-            }
-            lblResult.setText(String.valueOf(result));
+        try {
+                String operation = (String) cbOperations.getSelectedItem();
+                double num1 = Double.parseDouble(tfNumber1.getText());
+                double num2 = Double.parseDouble(tfNumber2.getText());
+                double result=0;
+                switch(operation){
+                    case "+":
+                        result = num1 + num2;
+                        break;
+                    case "-":
+                        result = num1 - num2;
+                        break;
+                    case "*":
+                        result = num1 * num2;
+                        break;
+                    case "/":
+                        result = num1 / num2;
+                        break;
+                }
+                lblResult.setText(String.valueOf(result));
+
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
         });
     }
     public static void main(String[] args) {
