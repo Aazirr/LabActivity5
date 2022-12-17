@@ -7,4 +7,5 @@ public class FoodOrderGUI {
     private JCheckBox pizzaCheckBox;
     private JRadioButton noneRadioButton;
     private JButton orderButton;
+
 }
